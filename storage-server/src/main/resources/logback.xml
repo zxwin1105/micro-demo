@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--定义日志格式参数,后面可以通过${myPattern}使用-->
+    <property name="myPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %c [%thread] %-5level %msg%n"/>
+
+    <!--定义ConsoleAppender 用于在屏幕上输出日志-->
+    <appender name="consoleAppend" class="ch.qos.logback.core.ConsoleAppender">
+        <!--显示控制台日志颜色 System.err【红色】 System.out【默认白色】-->
+        <target>System.out</target>
+        <!--配置日志输出格式，并引用 myPattern 自定的日志格式-->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>${myPattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!--配置日志记录器并设置日志记录器的打印级别-->
+    <root level="debug">
+        <!--引入appender....-->
+        <appender-ref ref="consoleAppend"/>
+    </root>
+</configuration>

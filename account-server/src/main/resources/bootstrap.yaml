@@ -1,0 +1,19 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      # 注册中心配置
+      discovery:
+        server-addr: @config.server-addr@
+        namespace: @config.namespace@
+        service: @artifactId@
+      config:
+        server-addr: @config.server-addr@
+        file-extension: yaml
+        shared-configs:
+          - application-common.${spring.cloud.nacos.config.file-extension}
+        group: DEFAULT_GROUP
+        namespace: @config.namespace@
