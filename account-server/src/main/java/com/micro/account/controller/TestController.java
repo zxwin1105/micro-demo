@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022/8/25
  * @description
  */
-@RestController
+//@RestController
 @RefreshScope
 @RequestMapping("/test")
 public class TestController {
