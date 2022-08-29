@@ -14,6 +14,7 @@ spring:
         server-addr: @config.server-addr@
         file-extension: yaml
         shared-configs:
-          - application-common.${spring.cloud.nacos.config.file-extension}
+          - data-id: application-common.${spring.cloud.nacos.config.file-extension}
+            refresh: true
         group: DEFAULT_GROUP
         namespace: @config.namespace@
